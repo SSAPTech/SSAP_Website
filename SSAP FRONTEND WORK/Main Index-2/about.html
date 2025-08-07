@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - SSAP TECH SOLUTIONS LLP</title>
+
+    <!-- Tailwind CSS CDN for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter for a clean, modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Custom styles for smoother transitions and font application */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .about-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://placehold.co/1920x1080/1e40af/FFFFFF?text=SSAP+Tech');
+            background-size: cover;
+            background-position: center;
+        }
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .active-page {
+            color: #4f46e5 !important;
+            font-weight: 700;
+            border-bottom: 2px solid #4f46e5;
+        }
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 24px;
+            height: 100%;
+            width: 2px;
+            background: #e5e7eb;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- ==================================================== Header section ==================================================== -->
+    <header class="top-header bg-white shadow-md py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <!-- Header Logo -->
+            <div class="header-logo mb-4 md:mb-0">
+                <a href="index.html" class="flex items-center">
+                    <img alt="SSAP Logo" class="h-12 w-auto rounded-lg shadow-md" src="d:\SSAP BACKUP 23 June 2025\img\SSAP LOGO.jpg">
+                    <span class="ml-3 text-2xl font-bold text-gray-900"></span>
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="navbar">
+                <div class="container-fluid">
+                    <!-- Mobile Menu Toggle Button -->
+                    <button id="navbar-toggle" class="md:hidden p-2 rounded-md text-gray-700 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" type="button">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+
+                    <!-- Nav Links -->
+                    <ul id="navbar-links" class="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 text-lg font-medium">
+                        <li><a class="menu text-blue-600 hover:text-indigo-600 transition duration-300 px-3 py-2 rounded-md" href="index.html">Home</a></li>
+                        <li><a class="menu text-blue-600 hover:text-indigo-600 transition duration-300 px-3 py-2 rounded-md active-page" href="about.html">About Us</a></li>
+                        <li><a class="menu text-blue-600 hover:text-indigo-600 transition duration-300 px-3 py-2 rounded-md" href="iso-audit.html">Iso 27k Audit</a></li>
+                        <li><a class="menu text-blue-600 hover:text-indigo-600 transition duration-300 px-3 py-2 rounded-md" href="services.html">Our Services</a></li>
+                        <li><a class="menu text-blue-600 hover:text-indigo-600 transition duration-300 px-3 py-2 rounded-md" href="https://md-33.webhostbox.net:2096/" target="_blank">Email</a></li>
+                        <li><a class="menu text-blue-600 hover:text-indigo-600 transition duration-300 px-3 py-2 rounded-md" href="careers.html">Careers</a></li>
+                        <li><a class="menu text-blue-600 hover:text-indigo-600 transition duration-300 px-3 py-2 rounded-md" href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- end of header area -->
+
+    <!-- ==================================================== Hero Section ==================================================== -->
+    <section class="page-header bg-indigo-700 text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">About SSAP Tech Solutions</h1>
+            <p class="text-xl max-w-3xl mx-auto">SSAP Tech Solutions LLP empowers professionals and organizations with industry-aligned training, ISO 27001 consulting, and strategic job placement services.</p>
+        </div>
+    </section>
+
+    <!-- ==================================================== Company Overview ==================================================== -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Company</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Who We Are</h3>
+                    <p class="text-lg text-gray-600 mb-6">
+                        SSAP Tech Solutions LLP is a dynamic IT services and consulting firm registered by the <strong>Ministry of Corporate Affairs (MCA)</strong>, Government of India. Since our inception in January 2022, we have been delivering cutting-edge technology solutions to businesses across various industries.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Our team of passionate professionals combines technical expertise with business acumen to deliver solutions that drive digital transformation and operational excellence.
+                    </p>
+                    <p class="text-lg text-gray-600">
+                        Headquartered in Pune, Maharashtra, we serve clients across India with plans for global expansion in the coming years.
+                    </p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-xl shadow-lg">
+                    <img src="d:\SSAP FRONTEND WORK\images\4K-Projects_Workplace_N-scaled.webp" alt="SSAP Tech Office" class="w-full rounded-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================== History Timeline ==================================================== -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Journey</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto"></div>
+                <p class="text-lg text-gray-600 mt-6 max-w-3xl mx-auto">
+                    From humble beginnings to becoming a trusted technology partner
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="relative space-y-8">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 top-0 w-4 h-4 bg-indigo-600 rounded-full z-10"></div>
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <h3 class="text-xl font-bold text-gray-800">Company Founded</h3>
+                                <span class="text-indigo-600 font-semibold">January 2022</span>
+                            </div>
+                            <p class="text-gray-600">
+                                SSAP Tech Solutions LLP was officially registered with the Ministry of Corporate Affairs, Government of India. Our journey began with a small team of 5 professionals and our first office in Pune.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 top-0 w-4 h-4 bg-indigo-600 rounded-full z-10"></div>
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <h3 class="text-xl font-bold text-gray-800">First Major Client</h3>
+                                <span class="text-indigo-600 font-semibold">June 2022</span>
+                            </div>
+                            <p class="text-gray-600">
+                                Secured our first enterprise client, marking our entry into the corporate IT services market. This project involved developing a custom CRM solution for a mid-sized manufacturing company.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 top-0 w-4 h-4 bg-indigo-600 rounded-full z-10"></div>
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <h3 class="text-xl font-bold text-gray-800">ISO Certification</h3>
+                                <span class="text-indigo-600 font-semibold">March 2023</span>
+                            </div>
+                            <p class="text-gray-600">
+                                Achieved ISO 27001:2013 certification for our information security management systems, demonstrating our commitment to data security and best practices.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 4 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 top-0 w-4 h-4 bg-indigo-600 rounded-full z-10"></div>
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <h3 class="text-xl font-bold text-gray-800">Team Expansion</h3>
+                                <span class="text-indigo-600 font-semibold">September 2023</span>
+                            </div>
+                            <p class="text-gray-600">
+                                Expanded our team to 25 professionals and moved to a larger office space in Kharadi, Pune to accommodate our growing business and service offerings.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 5 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 top-0 w-4 h-4 bg-indigo-600 rounded-full z-10"></div>
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <h3 class="text-xl font-bold text-gray-800">Current Milestones</h3>
+                                <span class="text-indigo-600 font-semibold">2024</span>
+                            </div>
+                            <p class="text-gray-600">
+                                Serving over 50 clients across various industries with a team of 40+ professionals. Expanding our service portfolio to include advanced cybersecurity solutions and AI-driven applications.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================== Mission & Vision ==================================================== -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Core</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Mission -->
+                <div class="bg-indigo-50 p-8 rounded-xl shadow-lg">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-indigo-100 rounded-full mb-4">
+                            <i class="fas fa-bullseye text-indigo-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Mission</h3>
+                    </div>
+                    <p class="text-lg text-gray-700 mb-6">
+                        To empower businesses through innovative technology solutions that drive growth, efficiency, and competitive advantage. We are committed to delivering exceptional value to our clients by combining technical expertise with deep industry knowledge.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Deliver reliable and scalable IT solutions</li>
+                        <li>Build long-term partnerships with our clients</li>
+                        <li>Foster innovation and continuous improvement</li>
+                        <li>Maintain the highest standards of quality and security</li>
+                        <li>Create sustainable value for all stakeholders</li>
+                    </ul>
+                </div>
+
+                <!-- Vision -->
+                <div class="bg-indigo-50 p-8 rounded-xl shadow-lg">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-indigo-100 rounded-full mb-4">
+                            <i class="fas fa-eye text-indigo-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Vision</h3>
+                    </div>
+                    <p class="text-lg text-gray-700 mb-6">
+                        To be recognized as a leading technology solutions provider known for innovation, reliability, and exceptional client service. We aspire to transform businesses through technology and become the partner of choice for organizations navigating digital transformation.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Expand our global footprint across three continents by 2030</li>
+                        <li>Develop industry-leading solutions in cybersecurity and AI</li>
+                        <li>Maintain 95%+ client retention rate through exceptional service</li>
+                        <li>Be recognized as a "Great Place to Work" for tech professionals</li>
+                        <li>Contribute to digital literacy and tech education initiatives</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================== Values Section ==================================================== -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Values</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto"></div>
+                <p class="text-lg text-gray-600 mt-6 max-w-3xl mx-auto">
+                    The principles that guide everything we do
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Value 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-indigo-100 rounded-full mb-4 mx-auto">
+                        <i class="fas fa-lightbulb text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Innovation</h3>
+                    <p class="text-gray-600">
+                        We embrace creativity and continuously seek better ways to solve problems and deliver value to our clients.
+                    </p>
+                </div>
+
+                <!-- Value 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-indigo-100 rounded-full mb-4 mx-auto">
+                        <i class="fas fa-users text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Collaboration</h3>
+                    <p class="text-gray-600">
+                        We believe in the power of teamwork, both within our organization and in partnership with our clients.
+                    </p>
+                </div>
+
+                <!-- Value 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-indigo-100 rounded-full mb-4 mx-auto">
+                        <i class="fas fa-chart-line text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Growth</h3>
+                    <p class="text-gray-600">
+                        We are committed to continuous learning and improvement, both as individuals and as an organization.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================== Contact section ==================================================== -->
+    <section class="contact py-16 bg-white" id="contact">
+        <div class="container mx-auto px-4">
+            <div class="contact-caption clearfix">
+                <div class="contact-heading text-center mb-12">
+                    <h2 class="text-5xl font-extrabold text-gray-900">Contact Us</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Contact Information -->
+                    <div class="contact-info bg-gray-100 p-8 rounded-xl shadow-lg">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6">SSAP Tech Solutions LLP - Contact Information</h3>
+                        <div class="info-detail space-y-4 text-lg text-gray-700">
+                            <p class="flex items-center"><i class="fas fa-clock text-indigo-600 mr-3 text-xl"></i><span class="font-semibold">Monday - Friday:</span> IST (UTC +5:30) 9:00 AM to 6:00 PM</p>
+                            <p class="flex items-start"><i class="fas fa-map-marker-alt text-indigo-600 mr-3 text-xl mt-1"></i><span class="font-semibold">Office Address:</span> Room-14, "Namo-Nivas", Sr.No 36/2,Kharadi, Pune, Pin Code-411014, Maharashtra-INDIA</p>
+                            <p class="flex items-center"><i class="fas fa-phone-alt text-indigo-600 mr-3 text-xl"></i><span class="font-semibold">Mobile Number:</span> +917720092602</p>
+                            <p class="flex items-center"><i class="fas fa-envelope text-indigo-600 mr-3 text-xl"></i><span class="font-semibold">Email:</span> <a href="mailto:contact@ssaptech.com" class="text-indigo-600 hover:underline">contact@ssaptech.com</a></p>
+                            <p class="flex items-center"><i class="fas fa-tools text-indigo-600 mr-3 text-xl"></i><span class="font-semibold">Technical Support Email:</span> <a href="mailto:support@ssaptech.com" class="text-indigo-600 hover:underline">support@ssaptech.com</a></p>
+                            <p class="flex items-center"><i class="fas fa-briefcase text-indigo-600 mr-3 text-xl"></i><span class="font-semibold">Careers Email:</span> <a href="mailto:job@ssaptech.com" class="text-indigo-600 hover:underline">job@ssaptech.com</a> & <a href="mailto:hr@ssaptecch.com" class="text-indigo-600 hover:underline">hr@ssaptecch.com</a></p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="contact-form bg-gray-100 p-8 rounded-xl shadow-lg">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6">Get In Touch</h3>
+                        <form id="contactForm" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" required>
+                            </div>
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                                <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" required>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" required></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-3 px-6 rounded-md hover:bg-indigo-700 transition duration-300">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end of contact section -->
+
+    <!-- ==================================================== Footer section ==================================================== -->
+    <footer class="footer bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <div class="footer-para mb-2 md:mb-0">
+                <p class="text-sm">&copy; Copyright &copy; 2025 SSAP TECH SOLUTIONS LLP. All rights reserved.</p>
+            </div>
+            <div class="social-icons">
+                <a href="#" class="text-white hover:text-indigo-400 mx-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white hover:text-indigo-400 mx-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white hover:text-indigo-400 mx-2"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="text-white hover:text-indigo-400 mx-2"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+    <!-- end of footer section -->
+
+    <!-- Floating Home Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="index.html" class="flex items-center justify-center w-12 h-12 bg-indigo-600 rounded-full shadow-lg hover:bg-indigo-700 transition duration-300">
+            <i class="fas fa-home text-white text-xl"></i>
+        </a>
+    </div>
+
+    <!-- ==================================================== JavaScript ==================================================== -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('navbar-toggle').addEventListener('click', function() {
+            const navbarLinks = document.getElementById('navbar-links');
+            navbarLinks.classList.toggle('hidden');
+            navbarLinks.classList.toggle('flex');
+            navbarLinks.classList.toggle('flex-col');
+            navbarLinks.classList.toggle('space-y-2');
+        });
+
+        // Highlight current page in navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinks = document.querySelectorAll('.menu');
+            
+            navLinks.forEach(link => {
+                const linkHref = link.getAttribute('href');
+                if ((currentPage === 'index.html' && linkHref === 'index.html') || 
+                    (currentPage === 'about.html' && linkHref === 'about.html') ||
+                    (currentPage === 'services.html' && linkHref === 'services.html') ||
+                    (currentPage === 'careers.html' && linkHref === 'careers.html')) {
+                    link.classList.add('active-page');
+                }
+            });
+        });
+
+        // Initialize Google Map
+        function initMap() {
+            const mapElement = document.getElementById('map');
+            if (mapElement) {
+                // Check if google.maps is defined (API loaded)
+                if (typeof google !== 'undefined' && typeof google.maps !== 'undefined') {
+                    const puneLocation = { lat: 18.5634, lng: 73.9197 }; // Coordinates for Kharadi, Pune roughly
+                    const map = new google.maps.Map(mapElement, {
+                        zoom: 14,
+                        center: puneLocation,
+                        mapId: 'DEMO_MAP_ID', // Use a valid Map ID if you have one, or remove this line
+                    });
+                    new google.maps.Marker({
+                        position: puneLocation,
+                        map: map,
+                        title: 'SSAP Tech Solutions LLP'
+                    });
+                } else {
+                    mapElement.innerHTML = '<p class="text-red-500">Google Maps API not loaded. Please ensure your API key is correct and the script tag is valid.</p>';
+                    console.error("Google Maps API not loaded.");
+                }
+            }
+        }
+
+        // Load Google Maps API script dynamically
+        function loadGoogleMapsScript() {
+            const apiKey = "YOUR_GOOGLE_MAPS_API_KEY"; // IMPORTANT: Replace with your actual Google Maps API Key
+            if (apiKey === "YOUR_GOOGLE_MAPS_API_KEY") {
+                console.warn("Google Maps API Key is not set. Map will not load. Please replace 'YOUR_GOOGLE_MAPS_API_KEY' with your actual key.");
+                document.getElementById('map').innerHTML = '<p class="text-red-500">Please set your Google Maps API Key for the map to display.</p>';
+                return;
+            }
+
+            const script = document.createElement('script');
+            script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`;
+            script.async = true;
+            script.defer = true;
+            document.head.appendChild(script);
+            script.onerror = () => {
+                console.error("Failed to load Google Maps script.");
+                document.getElementById('map').innerHTML = '<p class="text-red-500">Failed to load Google Maps. Check your internet connection or API key.</p>';
+            };
+        }
+
+        // Call functions on window load
+        window.onload = function() {
+            loadGoogleMapsScript(); // Load the map
+        };
+    </script>
+</body>
+</html>
