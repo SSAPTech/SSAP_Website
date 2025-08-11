@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - SSAP TECH SOLUTIONS LLP</title>
+
+    <!-- Tailwind CSS CDN for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter for a clean, modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Custom styles for smoother transitions and font application */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .careers-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://placehold.co/1920x1080/1e40af/FFFFFF?text=SSAP+Careers');
+            background-size: cover;
+            background-position: center;
+        }
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .active-page {
+            color: #4f46e5 !important;
+            font-weight: 700;
+            border-bottom: 2px solid #4f46e5;
+        }
+        .benefit-icon {
+            transition: all 0.3s ease;
+        }
+        .benefit-card:hover .benefit-icon {
+            transform: scale(1.1);
+            color: #4f46e5;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- ==================================================== Header section ==================================================== -->
+    <header class="top-header bg-white shadow-md py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <!-- Header Logo -->
+            <div class="header-logo mb-4 md:mb-0">
+                <a href="index.html" class="flex items-center">
+                    <img alt="SSAP Logo" class="h-12 w-auto rounded-lg shadow-md" src="../images/SSAP-Logo.jpg">
+                    <span class="ml-3 text-2xl font-bold text-gray-900"></span>
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="navbar">
+                <div class="container-fluid">
+                    <!-- Mobile Menu Toggle Button -->
+                    <button id="navbar-toggle" class="md:hidden p-2 rounded-md text-gray-700 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" type="button">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+
+                    <!-- Nav Links -->
+                    <ul id="navbar-links" class="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 text-lg font-medium">
+                        <li><a class="menu text-blue-600 hover:text-indigo-600 transition duration-300 px-3 py-2 rounded-md" href="index.html">Home</a></li>
+                        <li><a class="menu text-blue-600 hover:text-indigo-600 transition duration-300 px-3 py-2 rounded-md" href="about.html">About Us</a></li>
+                        <li><a class="menu text-blue-600 hover:text-indigo-600 transition duration-300 px-3 py-2 rounded-md" href="iso-audit.html">Iso 27k Audit</a></li>
+                        <li><a class="menu text-blue-600 hover:text-indigo-600 transition duration-300 px-3 py-2 rounded-md" href="services.html">Our Services</a></li>
+                        <li><a class="menu text-blue-600 hover:text-indigo-600 transition duration-300 px-3 py-2 rounded-md" href="https://md-33.webhostbox.net:2096/" target="_blank">Email</a></li>
+                        <li><a class="menu text-blue-600 hover:text-indigo-600 transition duration-300 px-3 py-2 rounded-md active-page" href="careers.html">Careers</a></li>
+                        <li><a class="menu text-blue-600 hover:text-indigo-600 transition duration-300 px-3 py-2 rounded-md" href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- end of header area -->
+
+    <!-- ==================================================== Hero Section ==================================================== -->
+    <section class="page-header bg-indigo-700 text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Build Your Career at SSAP Tech</h1>
+            <p class="text-xl max-w-3xl mx-auto">Join our team of innovators and problem-solvers working at the intersection of technology and business transformation.</p>
+        </div>
+    </section>
+
+    <!-- ==================================================== Why Join Us ==================================================== -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Why Join SSAP Tech?</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto"></div>
+                <p class="text-lg text-gray-600 mt-6 max-w-3xl mx-auto">
+                    We're building more than just a company - we're creating a community of tech enthusiasts
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Benefit 1 -->
+                <div class="benefit-card bg-gray-50 p-8 rounded-xl shadow-md text-center hover:shadow-lg transition duration-300">
+                    <div class="benefit-icon inline-flex items-center justify-center w-16 h-16 bg-indigo-100 rounded-full mb-4 mx-auto text-indigo-600 text-2xl">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Continuous Learning</h3>
+                    <p class="text-gray-600">
+                        Access to training programs, certifications, and mentorship to accelerate your professional growth.
+                    </p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="benefit-card bg-gray-50 p-8 rounded-xl shadow-md text-center hover:shadow-lg transition duration-300">
+                    <div class="benefit-icon inline-flex items-center justify-center w-16 h-16 bg-indigo-100 rounded-full mb-4 mx-auto text-indigo-600 text-2xl">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Innovative Projects</h3>
+                    <p class="text-gray-600">
+                        Work on cutting-edge technologies and challenging projects that push boundaries.
+                    </p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="benefit-card bg-gray-50 p-8 rounded-xl shadow-md text-center hover:shadow-lg transition duration-300">
+                    <div class="benefit-icon inline-flex items-center justify-center w-16 h-16 bg-indigo-100 rounded-full mb-4 mx-auto text-indigo-600 text-2xl">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Collaborative Culture</h3>
+                    <p class="text-gray-600">
+                        Join a team that values open communication, knowledge sharing, and mutual support.
+                    </p>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="benefit-card bg-gray-50 p-8 rounded-xl shadow-md text-center hover:shadow-lg transition duration-300">
+                    <div class="benefit-icon inline-flex items-center justify-center w-16 h-16 bg-indigo-100 rounded-full mb-4 mx-auto text-indigo-600 text-2xl">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Global Exposure</h3>
+                    <p class="text-gray-600">
+                        Opportunities to work with international clients and diverse teams across industries.
+                    </p>
+                </div>
+
+                <!-- Benefit 5 -->
+                <div class="benefit-card bg-gray-50 p-8 rounded-xl shadow-md text-center hover:shadow-lg transition duration-300">
+                    <div class="benefit-icon inline-flex items-center justify-center w-16 h-16 bg-indigo-100 rounded-full mb-4 mx-auto text-indigo-600 text-2xl">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Work-Life Balance</h3>
+                    <p class="text-gray-600">
+                        Flexible work arrangements and wellness programs to support your overall wellbeing.
+                    </p>
+                </div>
+
+                <!-- Benefit 6 -->
+                <div class="benefit-card bg-gray-50 p-8 rounded-xl shadow-md text-center hover:shadow-lg transition duration-300">
+                    <div class="benefit-icon inline-flex items-center justify-center w-16 h-16 bg-indigo-100 rounded-full mb-4 mx-auto text-indigo-600 text-2xl">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Career Growth</h3>
+                    <p class="text-gray-600">
+                        Clear career paths with regular performance reviews and advancement opportunities.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================== Current Openings ==================================================== -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Current Job Openings</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto"></div>
+                <p class="text-lg text-gray-600 mt-6 max-w-3xl mx-auto">
+                    Explore opportunities to join our growing team
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-6">
+                <!-- Job 1 -->
+                <div class="job-card bg-white p-6 rounded-xl shadow-md transition duration-300">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <h3 class="text-xl font-bold text-gray-800">Cybersecurity Consultant</h3>
+                        <span class="text-indigo-600 font-semibold">Pune, Full-time</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded">ISO 27001</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded">Risk Assessment</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded">Compliance</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        We're seeking an experienced Cybersecurity Consultant to lead ISO 27001 implementation projects, conduct security assessments, and advise clients on information security best practices.
+                    </p>
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div>
+                            <span class="text-gray-500 text-sm">Posted: 2 weeks ago</span>
+                        </div>
+                        <a href="#apply" class="text-indigo-600 font-semibold hover:text-indigo-800 transition duration-300">
+                            Apply Now <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="job-card bg-white p-6 rounded-xl shadow-md transition duration-300">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <h3 class="text-xl font-bold text-gray-800">Full Stack Developer</h3>
+                        <span class="text-indigo-600 font-semibold">Remote, Full-time</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded">React</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded">Node.js</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded">MongoDB</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Join our product development team to build scalable web applications using modern JavaScript frameworks. You'll work on everything from UI components to backend APIs.
+                    </p>
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div>
+                            <span class="text-gray-500 text-sm">Posted: 1 week ago</span>
+                        </div>
+                        <a href="#apply" class="text-indigo-600 font-semibold hover:text-indigo-800 transition duration-300">
+                            Apply Now <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="job-card bg-white p-6 rounded-xl shadow-md transition duration-300">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <h3 class="text-xl font-bold text-gray-800">IT Trainer</h3>
+                        <span class="text-indigo-600 font-semibold">Pune, Part-time</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded">Cybersecurity</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded">Cloud Computing</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded">Workshops</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        We're looking for passionate trainers to conduct workshops and training sessions on cybersecurity, cloud technologies, and other IT domains for corporate clients.
+                    </p>
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div>
+                            <span class="text-gray-500 text-sm">Posted: 3 days ago</span>
+                        </div>
+                        <a href="#apply" class="text-indigo-600 font-semibold hover:text-indigo-800 transition duration-300">
+                            Apply Now <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job 4 -->
+                <div class="job-card bg-white p-6 rounded-xl shadow-md transition duration-300">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <h3 class="text-xl font-bold text-gray-800">Business Development Executive</h3>
+                        <span class="text-indigo-600 font-semibold">Pune/Mumbai, Full-time</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded">IT Services</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded">Client Acquisition</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded">Consulting</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Drive business growth by identifying new opportunities, building client relationships, and promoting our IT consulting and training services to enterprises.
+                    </p>
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div>
+                            <span class="text-gray-500 text-sm">Posted: 5 days ago</span>
+                        </div>
+                        <a href="#apply" class="text-indigo-600 font-semibold hover:text-indigo-800 transition duration-300">
+                            Apply Now <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <p class="text-gray-600 mb-6">Don't see your perfect role? We're always interested in meeting talented people.</p>
+                <a href="#contact" class="bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-indigo-700 transition duration-300 inline-block">
+                    Send Us Your Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================== Contact Info Section ==================================================== -->
+    <section class="contact py-16 bg-white" id="contact">
+        <div class="container mx-auto px-4">
+            <div class="contact-caption clearfix">
+                <div class="contact-heading text-center mb-12">
+                    <h2 class="text-5xl font-extrabold text-gray-900">Contact Us</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Contact Information -->
+                    <div class="contact-info bg-gray-100 p-8 rounded-xl shadow-lg">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6">SSAP Tech Solutions LLP - Contact Information</h3>
+                        <div class="info-detail space-y-4 text-lg text-gray-700">
+                            <p class="flex items-center"><i class="fas fa-clock text-indigo-600 mr-3 text-xl"></i><span class="font-semibold">Monday - Friday:</span> IST (UTC +5:30) 9:00 AM to 6:00 PM</p>
+                            <p class="flex items-start"><i class="fas fa-map-marker-alt text-indigo-600 mr-3 text-xl mt-1"></i><span class="font-semibold">Office Address:</span> Room-14, "Namo-Nivas", Sr.No 36/2,Kharadi, Pune, Pin Code-411014, Maharashtra-INDIA</p>
+                            <p class="flex items-center"><i class="fas fa-phone-alt text-indigo-600 mr-3 text-xl"></i><span class="font-semibold">Mobile Number:</span> +917720092602</p>
+                            <p class="flex items-center"><i class="fas fa-envelope text-indigo-600 mr-3 text-xl"></i><span class="font-semibold">Email:</span> <a href="mailto:contact@ssaptech.com" class="text-indigo-600 hover:underline">contact@ssaptech.com</a></p>
+                            <p class="flex items-center"><i class="fas fa-tools text-indigo-600 mr-3 text-xl"></i><span class="font-semibold">Technical Support Email:</span> <a href="mailto:support@ssaptech.com" class="text-indigo-600 hover:underline">support@ssaptech.com</a></p>
+                            <p class="flex items-center"><i class="fas fa-briefcase text-indigo-600 mr-3 text-xl"></i><span class="font-semibold">Careers Email:</span> <a href="mailto:job@ssaptech.com" class="text-indigo-600 hover:underline">job@ssaptech.com</a> & <a href="mailto:hr@ssaptecch.com" class="text-indigo-600 hover:underline">hr@ssaptecch.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end of contact section -->
+
+    <!-- ==================================================== Footer section ==================================================== -->
+    <footer class="footer bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <div class="footer-para mb-2 md:mb-0">
+                <p class="text-sm">&copy; Copyright &copy; 2025 SSAP TECH SOLUTIONS LLP. All rights reserved.</p>
+            </div>
+            <div class="social-icons">
+                <a href="#" class="text-white hover:text-indigo-400 mx-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white hover:text-indigo-400 mx-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white hover:text-indigo-400 mx-2"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="text-white hover:text-indigo-400 mx-2"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+    <!-- end of footer section -->
+
+    <!-- Floating Home Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="index.html" class="flex items-center justify-center w-12 h-12 bg-indigo-600 rounded-full shadow-lg hover:bg-indigo-700 transition duration-300">
+            <i class="fas fa-home text-white text-xl"></i>
+        </a>
+    </div>
+
+    <!-- ==================================================== JavaScript ==================================================== -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('navbar-toggle').addEventListener('click', function() {
+            const navbarLinks = document.getElementById('navbar-links');
+            navbarLinks.classList.toggle('hidden');
+            navbarLinks.classList.toggle('flex');
+            navbarLinks.classList.toggle('flex-col');
+            navbarLinks.classList.toggle('space-y-2');
+        });
+
+        // Highlight current page in navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinks = document.querySelectorAll('.menu');
+            
+            navLinks.forEach(link => {
+                const linkHref = link.getAttribute('href');
+                if ((currentPage === 'index.html' && linkHref === 'index.html') || 
+                    (currentPage === 'about.html' && linkHref === 'about.html') ||
+                    (currentPage === 'services.html' && linkHref === 'services.html') ||
+                    (currentPage === 'careers.html' && linkHref === 'careers.html')) {
+                    link.classList.add('active-page');
+                }
+            });
+        });
+
+        // Form submission handling
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Here you would typically send the form data to your server
+                alert('Thank you for your submission! We will contact you soon.');
+                form.reset();
+            });
+        });
+    </script>
+</body>
+</html>
