@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISO 27K Audit - SSAP TECH SOLUTIONS LLP</title>
+
+    <!-- Tailwind CSS CDN for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter for a clean, modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Combined custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+        }
+        
+        /* Improved pentagon styling */
+        .pentagon-text {
+            background-color: #f1c40f;
+            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.875rem;
+            margin: 0 0 1rem 0;
+        }
+        
+        /* Section styling */
+        section {
+            padding: 5rem 0;
+        }
+        
+        /* Improved card styling */
+        .service-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            border-left-color: #3b82f6;
+        }
+        
+        /* Improved list styling */
+        .styled-list li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
+        }
+        .styled-list li:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 0.75rem;
+            height: 0.75rem;
+            background-color: #3b82f6;
+            border-radius: 50%;
+        }
+        
+        /* Gradient background for sections */
+        .gradient-bg {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        /* Active navigation item */
+        .nav-active, .active-page {
+            color: #4f46e5 !important;
+            font-weight: 700;
+            border-bottom: 2px solid #4f46e5;
+        }
+        
+        /* Carousel styles */
+        .carousel-item {
+            transition: opacity 1s ease-in-out;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .carousel-item.active {
+            opacity: 1;
+            position: relative;
+        }
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .carousel-caption {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            max-width: 90%;
+        }
+        
+        /* Map styling */
+        #map {
+            height: 400px;
+            width: 100%;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- ==================================================== Header section ==================================================== -->
+    <header class="top-header bg-white shadow-md py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <!-- Header Logo -->
+            <div class="header-logo mb-4 md:mb-0">
+                <a href="index.html" class="flex items-center">
+                   <img alt="SSAP Logo" class="h-12 w-auto rounded-lg shadow-md" src="images/SSAP-Logo.jpg" onerror="this.onerror=null;this.src='https://placehold.co/200x100?text=SSAP+Logo';this.alt='SSAP Logo'">
+                    <span class="ml-3 text-2xl font-bold text-gray-900"></span>
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="navbar">
+                <div class="container-fluid">
+                    <!-- Mobile Menu Toggle Button -->
+                    <button id="navbar-toggle" class="md:hidden p-2 rounded-md text-gray-700 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" type="button">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+
+                    <!-- Nav Links -->
+                    <ul id="navbar-links" class="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 text-lg font-medium">
+                        <li><a class="menu text-blue-600 hover:text-indigo-600 transition duration-300 px-3 py-2 rounded-md" href="index.html">Home</a></li>
+                        <li><a class="menu text-blue-600 hover:text-indigo-600 transition duration-300 px-3 py-2 rounded-md" href="about.html">About Us</a></li>
+                        <li><a class="menu text-blue-600 hover:text-indigo-600 transition duration-300 px-3 py-2 rounded-md nav-active" href="iso-audit.html">ISO 27K Audit</a></li>
+                        <li><a class="menu text-blue-600 hover:text-indigo-600 transition duration-300 px-3 py-2 rounded-md" href="services.html">Our Services</a></li>
+                        <li><a class="menu text-blue-600 hover:text-indigo-600 transition duration-300 px-3 py-2 rounded-md" href="https://md-33.webhostbox.net:2096/" target="_blank">Email</a></li>
+                        <li><a class="menu text-blue-600 hover:text-indigo-600 transition duration-300 px-3 py-2 rounded-md" href="careers.html">Careers</a></li>
+                        <li><a class="menu text-blue-600 hover:text-indigo-600 transition duration-300 px-3 py-2 rounded-md" href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- end of header area -->
+
+    <!-- ==================================================== ISO 27K Audit Hero ==================================================== -->
+    <section class="hero bg-indigo-700 text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-6">ISO 27001 Information Security Audits</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto">
+                Comprehensive ISO 27001 audit services to ensure your information security management system meets international standards
+            </p>
+        </div>
+    </section>
+
+    <!-- ==================================================== ISO 27K Consulting section ==================================================== -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-extrabold mb-8 text-gray-900">
+                    ISO 27001 Audit Services
+                </h2>
+                <p class="text-lg text-gray-700 mb-8">
+                    Our ISO/IEC 27001 audit services help organizations verify compliance with the international standard for information security management systems (ISMS):
+                </p>
+                
+                <div class="prose prose-lg text-gray-700 mb-12">
+                    <ul class="styled-list space-y-3">
+                        <li><strong>Independent verification:</strong> Our audits provide objective evidence of your ISMS effectiveness</li>
+                        <li><strong>Risk-based approach:</strong> Focused on your organization's specific information security risks</li>
+                        <li><strong>Compliance assurance:</strong> Verify your controls meet ISO 27001 requirements</li>
+                        <li><strong>Continuous improvement:</strong> Identify opportunities to enhance your security posture</li>
+                        <li><strong>Certification readiness:</strong> Prepare for formal certification audits</li>
+                    </ul>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Internal Audits -->
+                    <div class="service-card bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="pentagon-text"><i class="fas fa-search"></i></div>
+                            <h3 class="text-2xl font-bold text-indigo-600 ml-4">Internal Audits</h3>
+                        </div>
+                        <ul class="styled-list space-y-3">
+                            <li>First-party audits conducted by your organization</li>
+                            <li>Verify ISMS implementation and effectiveness</li>
+                            <li>Identify nonconformities and improvement opportunities</li>
+                            <li>Prepare for certification audits</li>
+                            <li>Annual audit program development</li>
+                        </ul>
+                    </div>
+
+                    <!-- Certification Audits -->
+                    <div class="service-card bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="pentagon-text"><i class="fas fa-certificate"></i></div>
+                            <h3 class="text-2xl font-bold text-indigo-600 ml-4">Certification Audits</h3>
+                        </div>
+                        <ul class="styled-list space-y-3">
+                            <li>Stage 1 - Documentation review</li>
+                            <li>Stage 2 - Implementation audit</li>
+                            <li>Surveillance audits (annual)</li>
+                            <li>Recertification audits (every 3 years)</li>
+                            <li>Auditor training and support</li>
+                        </ul>
+                    </div>
+
+                    <!-- Specialized Audits -->
+                    <div class="service-card bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="pentagon-text"><i class="fas fa-shield-alt"></i></div>
+                            <h3 class="text-2xl font-bold text-indigo-600 ml-4">Specialized Audits</h3>
+                        </div>
+                        <ul class="styled-list space-y-3">
+                            <li>Supplier/vendor audits</li>
+                            <li>Cloud security audits</li>
+                            <li>GDPR compliance audits</li>
+                            <li>Integrated audits (ISO 27001 + ISO 9001)</li>
+                            <li>Technical control assessments</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Audit Process -->
+                <div class="mt-12 bg-blue-50 p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-indigo-600 mb-6">Our Audit Process</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <div class="text-indigo-600 text-3xl mb-3 font-bold">1</div>
+                            <h4 class="font-semibold text-lg mb-2">Planning</h4>
+                            <p class="text-gray-700">Define scope, objectives, and criteria</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <div class="text-indigo-600 text-3xl mb-3 font-bold">2</div>
+                            <h4 class="font-semibold text-lg mb-2">Document Review</h4>
+                            <p class="text-gray-700">Evaluate ISMS documentation</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <div class="text-indigo-600 text-3xl mb-3 font-bold">3</div>
+                            <h4 class="font-semibold text-lg mb-2">On-site Audit</h4>
+                            <p class="text-gray-700">Interview staff and observe processes</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <div class="text-indigo-600 text-3xl mb-3 font-bold">4</div>
+                            <h4 class="font-semibold text-lg mb-2">Reporting</h4>
+                            <p class="text-gray-700">Document findings and recommendations</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Audit Benefits -->
+                <div class="mt-12">
+                    <h3 class="text-2xl font-bold text-indigo-600 mb-6">Benefits of ISO 27001 Audits</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-indigo-500">
+                            <h4 class="font-semibold text-lg mb-2 text-indigo-600">Risk Management</h4>
+                            <p class="text-gray-700">Identify and mitigate information security risks before they become incidents</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-indigo-500">
+                            <h4 class="font-semibold text-lg mb-2 text-indigo-600">Compliance</h4>
+                            <p class="text-gray-700">Demonstrate compliance with legal, regulatory and contractual requirements</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-indigo-500">
+                            <h4 class="font-semibold text-lg mb-2 text-indigo-600">Customer Confidence</h4>
+                            <p class="text-gray-700">Build trust with customers and partners through independent verification</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-indigo-500">
+                            <h4 class="font-semibold text-lg mb-2 text-indigo-600">Continuous Improvement</h4>
+                            <p class="text-gray-700">Identify opportunities to enhance your security controls and processes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================== CTA Section ==================================================== -->
+    <section class="py-16 bg-indigo-700 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready for Your ISO 27001 Audit?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                Contact our audit team to discuss your requirements and get a customized proposal
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="mailto:audit@ssaptech.com" class="bg-white text-indigo-700 hover:bg-gray-100 font-bold py-3 px-6 rounded-lg transition duration-300">
+                    Email Our Audit Team
+                </a>
+                <a href="tel:+917720092602" class="bg-indigo-800 hover:bg-indigo-900 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                    Call Us: +91 7720092602
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================== Footer section ==================================================== -->
+    <footer class="footer bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-sm">&copy; Copyright &copy; 2025 SSAP TECH SOLUTIONS LLP. All rights reserved.</p>
+                </div>
+                <div class="social-icons flex space-x-4">
+                    <a href="#" class="text-white hover:text-indigo-400 transition duration-300" aria-label="Facebook">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-indigo-400 transition duration-300" aria-label="Twitter">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-indigo-400 transition duration-300" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end of footer section -->
+
+    <!-- Floating Home Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="index.html" class="flex items-center justify-center w-12 h-12 bg-indigo-600 rounded-full shadow-lg hover:bg-indigo-700 transition duration-300">
+            <i class="fas fa-home text-white text-xl"></i>
+        </a>
+    </div>
+
+
+    <!-- ==================================================== JavaScript ==================================================== -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('navbar-toggle').addEventListener('click', function() {
+            const navbarLinks = document.getElementById('navbar-links');
+            navbarLinks.classList.toggle('hidden');
+            navbarLinks.classList.toggle('flex');
+            navbarLinks.classList.toggle('flex-col');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a.menu[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                // Close mobile menu after clicking a link
+                if (document.getElementById('navbar-links').classList.contains('flex')) {
+                    document.getElementById('navbar-links').classList.remove('flex');
+                    document.getElementById('navbar-links').classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

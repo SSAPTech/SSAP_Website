@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSAP - TECH SOLUTIONS LLP</title>
+
+    <!-- Tailwind CSS CDN for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter for a clean, modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+        }
+        
+        /* Improved carousel */
+        .carousel-container {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .carousel-item {
+            transition: opacity 1.2s ease-in-out;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .carousel-item.active {
+            opacity: 1;
+            position: relative;
+        }
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .carousel-caption {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%);
+            text-align: left;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 2rem;
+            border-radius: 0.75rem;
+            max-width: 600px;
+            backdrop-filter: blur(5px);
+            border-left: 4px solid #f1c40f;
+        }
+        
+        /* Improved pentagon styling */
+        .pentagon-text {
+            background-color: #f1c40f;
+            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.875rem;
+            margin: 0 0 1rem 0;
+        }
+        
+        /* Section styling */
+        section {
+            padding: 5rem 0;
+        }
+        
+        /* Improved card styling */
+        .service-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            border-left-color: #3b82f6;
+        }
+        
+        /* Map styling */
+        #map {
+            height: 400px;
+            width: 100%;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Improved list styling */
+        .styled-list li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
+        }
+        .styled-list li:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 0.75rem;
+            height: 0.75rem;
+            background-color: #3b82f6;
+            border-radius: 50%;
+        }
+        
+        /* Gradient background for sections */
+        .gradient-bg {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        /* Active navigation item */
+        .nav-active {
+            background-color: #4f46e5;
+            color: white;
+        }
+
+        /* Active page underline effect */
+        .active-page {
+            color: #4f46e5 !important;
+            font-weight: 700;
+            border-bottom: 2px solid #4f46e5;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- ==================================================== Header section ==================================================== -->
+    <header class="top-header bg-white shadow-md py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <!-- Header Logo -->
+            <div class="header-logo mb-4 md:mb-0">
+                <a href="index.html" class="flex items-center">
+                    <img alt="SSAP Logo" class="h-12 w-auto rounded-lg shadow-md" src="images/SSAP-Logo.jpg" onerror="this.onerror=null;this.src='https://placehold.co/200x100?text=SSAP+Logo';this.alt='SSAP Logo'">
+                    <span class="ml-3 text-2xl font-bold text-gray-900"></span>
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="navbar">
+                <div class="container-fluid">
+                    <!-- Mobile Menu Toggle Button -->
+                    <button id="navbar-toggle" class="md:hidden p-2 rounded-md text-gray-700 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" type="button">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+
+                    <!-- Nav Links -->
+                    <ul id="navbar-links" class="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 text-lg font-medium">
+                        <li><a class="menu text-blue-600 hover:text-indigo-600 transition duration-300 px-3 py-2 rounded-md active-page" href="index.html">Home</a></li>
+                        <li><a class="menu text-blue-600 hover:text-indigo-600 transition duration-300 px-3 py-2 rounded-md" href="about.html">About Us</a></li>
+                        <li><a class="menu text-blue-600 hover:text-indigo-600 transition duration-300 px-3 py-2 rounded-md" href="iso-audit.html">Iso 27k Audit</a></li>
+                        <li><a class="menu text-blue-600 hover:text-indigo-600 transition duration-300 px-3 py-2 rounded-md" href="services.html">Our Services</a></li>
+                        <li><a class="menu text-blue-600 hover:text-indigo-600 transition duration-300 px-3 py-2 rounded-md" href="https://md-33.webhostbox.net:2096/" target="_blank">Email</a></li>
+                        <li><a class="menu text-blue-600 hover:text-indigo-600 transition duration-300 px-3 py-2 rounded-md" href="careers.html">Careers</a></li>
+                        <li><a class="menu text-blue-600 hover:text-indigo-600 transition duration-300 px-3 py-2 rounded-md" href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- end of header area -->
+
+    <!-- ==================================================== Hero section ==================================================== -->
+    <section class="slider relative h-screen overflow-hidden" id="home">
+        <div class="carousel-container relative w-full h-full">
+            <div class="carousel-inner h-full">
+                <!-- Slide 1 -->
+                <div class="carousel-item active h-full">
+                    <img alt="Design & Development" src="images/slide-one1.jpg" 
+                         class="w-full h-full object-cover"
+                         onerror="this.onerror=null;this.src='https://placehold.co/1920x1080?text=Design+Development';this.alt='Design & Development'">
+                    <div class="carousel-caption">
+                        <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Design & Development</h2>
+                        <p class="text-lg md:text-xl leading-relaxed">Software design, development, maintenance & implementation, Website designing, Mobile App & Open Source Development</p>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="carousel-item h-full">
+                    <img alt="Network Security" src="images/slide-two2.jpg"
+                         class="w-full h-full object-cover"
+                         onerror="this.onerror=null;this.src='https://placehold.co/1920x1080?text=Network+Security';this.alt='Network Security'">
+                    <div class="carousel-caption">
+                        <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Network Security</h1>
+                        <p class="text-lg md:text-xl leading-relaxed">Enterprise Network & Security, Datacenter, Telecom, Enterprise Software Development & Consultancy</p>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="carousel-item h-full">
+                    <img alt="Consulting" src="images/slide-three3.jpg" 
+                         class="w-full h-full object-cover"
+                         onerror="this.onerror=null;this.src='https://placehold.co/1920x1080?text=Consulting';this.alt='Consulting'">
+                    <div class="carousel-caption">
+                        <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Consulting</h1>
+                        <p class="text-lg md:text-xl leading-relaxed">All types of Management consulting</p>
+                    </div>
+                </div>
+                
+                <!-- Slide 4 -->
+                <div class="carousel-item h-full">
+                    <img alt="Training" src="images/slide-four4.jpg" 
+                         class="w-full h-full object-cover"
+                         onerror="this.onerror=null;this.src='https://placehold.co/1920x1080?text=Training';this.alt='Training'">
+                    <div class="carousel-caption">
+                        <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Training</h1>
+                        <p class="text-lg md:text-xl leading-relaxed">Online Professional training (Online Virtual Classroom & Live tutoring platform)</p>
+                    </div>
+                </div>
+                
+                <!-- Slide 5 -->
+                <div class="carousel-item h-full">
+                    <img alt="SSAP Overview" src="images/slide-five5.jpg"
+                         class="w-full h-full object-cover"
+                         onerror="this.onerror=null;this.src='https://placehold.co/1920x1080?text=SSAP+Overview';this.alt='SSAP Overview'">
+                    <div class="carousel-caption">
+                        <h1 class="text-4xl md:text-5xl font-extrabold mb-4">SSAP Overview</h1>
+                        <p class="text-lg md:text-xl leading-relaxed">Easy learning and Technologies</p>  
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition duration-300 z-10" aria-label="Previous Slide">
+                <i class="fas fa-chevron-left text-2xl"></i>
+            </button>
+            <button class="carousel-control-next absolute top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition duration-300 z-10" aria-label="Next Slide">
+                <i class="fas fa-chevron-right text-2xl"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- ==================================================== Quick Links section ==================================================== -->
+    <section class="quick-links py-12 bg-indigo-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Explore More</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a href="about.html" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-info-circle text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">About Us</h3>
+                    <p class="text-gray-600">Learn more about our company, mission, and values</p>
+                </a>
+                
+                <a href="services.html" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-laptop-code text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Our Services</h3>
+                    <p class="text-gray-600">Discover our comprehensive range of IT solutions</p>
+                </a>
+                
+                <a href="iso-audit.html" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">ISO 27K Audit</h3>
+                    <p class="text-gray-600">Information security management system consulting</p>
+                </a>
+                
+                <a href="#contact" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-envelope text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Contact Us</h3>
+                    <p class="text-gray-600">Get in touch with our team for inquiries</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- end of quick links section -->
+
+    <!-- ==================================================== Contact section ==================================================== -->
+    <section class="contact py-16 bg-white" id="contact">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-extrabold mb-12 text-gray-900 text-center">Contact Us</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Contact Information -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6">SSAP Tech Solutions LLP - Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <i class="fas fa-clock text-indigo-600 text-xl mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Working Hours</h4>
+                                    <p>Monday - Friday: IST (UTC +5:30) 9:00 AM to 6:00 PM</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-indigo-600 text-xl mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Office Address</h4>
+                                    <p>Room-14, "Namo-Nivas", Sr.No 36/2,Kharadi, Pune, Pin Code-411014, Maharashtra-INDIA</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <i class="fas fa-phone-alt text-indigo-600 text-xl mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Mobile Number</h4>
+                                    <p>+917720092602</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-indigo-600 text-xl mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Email</h4>
+                                    <a href="mailto:contact@ssaptech.com" class="text-indigo-600 hover:underline">contact@ssaptech.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <i class="fas fa-tools text-indigo-600 text-xl mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Technical Support Email</h4>
+                                    <a href="mailto:support@ssaptech.com" class="text-indigo-600 hover:underline">support@ssaptech.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <i class="fas fa-briefcase text-indigo-600 text-xl mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Careers Email</h4>
+                                    <div class="flex flex-col sm:flex-row gap-2">
+                                        <a href="mailto:job@ssaptech.com" class="text-indigo-600 hover:underline">job@ssaptech.com</a>
+                                        <a href="mailto:hr@ssaptecch.com" class="text-indigo-600 hover:underline">hr@ssaptecch.com</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="contact-form bg-gray-100 p-8 rounded-xl shadow-lg">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
+                        <form class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            </div>
+                            <div>
+                                <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                                <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                            </div>
+                            <button type="submit" class="bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-indigo-700 transition duration-300 w-full">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end of contact section -->
+
+    <!-- ==================================================== Footer section ==================================================== -->
+    <footer class="footer bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-sm">&copy; Copyright &copy; 2025 SSAP TECH SOLUTIONS LLP. All rights reserved.</p>
+                </div>
+                <div class="social-icons flex space-x-4">
+                    <a href="#" class="text-white hover:text-indigo-400 transition duration-300" aria-label="Facebook">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-indigo-400 transition duration-300" aria-label="Twitter">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-indigo-400 transition duration-300" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end of footer section -->
+
+    <!-- ==================================================== JavaScript ==================================================== -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a.menu[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                // Close mobile menu after clicking a link
+                if (document.getElementById('navbar-links').classList.contains('flex')) {
+                    document.getElementById('navbar-links').classList.remove('flex');
+                    document.getElementById('navbar-links').classList.add('hidden');
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        document.getElementById('navbar-toggle').addEventListener('click', function() {
+            const navbarLinks = document.getElementById('navbar-links');
+            navbarLinks.classList.toggle('hidden');
+            navbarLinks.classList.toggle('flex');
+            navbarLinks.classList.toggle('flex-col');
+        });
+
+        // Highlight current page in navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinks = document.querySelectorAll('.menu');
+            
+            navLinks.forEach(link => {
+                const linkHref = link.getAttribute('href');
+                if ((currentPage === 'index.html' && linkHref === 'index.html') || 
+                    (currentPage === 'about.html' && linkHref === 'about.html') ||
+                    (currentPage === 'services.html' && linkHref === 'services.html') ||
+                    (currentPage === 'iso-audit.html' && linkHref === 'iso-audit.html')) {
+                    link.classList.add('active-page');
+                }
+            });
+        });
+
+        // Carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // Auto-advance carousel
+        let slideInterval = setInterval(nextSlide, 6000); // Change slide every 6 seconds
+
+        // Add event listeners for carousel controls
+        document.querySelector('.carousel-control-next').addEventListener('click', () => {
+            clearInterval(slideInterval);
+            nextSlide();
+            slideInterval = setInterval(nextSlide, 6000);
+        });
+
+        document.querySelector('.carousel-control-prev').addEventListener('click', () => {
+            clearInterval(slideInterval);
+            prevSlide();
+            slideInterval = setInterval(nextSlide, 6000);
+        });
+
+        // Initialize Google Map
+        function initMap() {
+            const mapElement = document.getElementById('map');
+            if (mapElement) {
+                // Check if google.maps is defined (API loaded)
+                if (typeof google !== 'undefined' && typeof google.maps !== 'undefined') {
+                    const puneLocation = { lat: 18.5634, lng: 73.9197 }; // Coordinates for Kharadi, Pune roughly
+                    const map = new google.maps.Map(mapElement, {
+                        zoom: 15,
+                        center: puneLocation,
+                        styles: [
+                            {
+                                "featureType": "all",
+                                "elementType": "labels.text.fill",
+                                "stylers": [
+                                    {
+                                        "saturation": 36
+                                    },
+                                    {
+                                        "color": "#333333"
+                                    },
+                                    {
+                                        "lightness": 40
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "all",
+                                "elementType": "labels.text.stroke",
+                                "stylers": [
+                                    {
+                                        "visibility": "on"
+                                    },
+                                    {
+                                        "color": "#ffffff"
+                                    },
+                                    {
+                                        "lightness": 16
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "all",
+                                "elementType": "labels.icon",
+                                "stylers": [
+                                    {
+                                        "visibility": "off"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "administrative",
+                                "elementType": "geometry.fill",
+                                "stylers": [
+                                    {
+                                        "color": "#fefefe"
+                                    },
+                                    {
+                                        "lightness": 20
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "administrative",
+                                "elementType": "geometry.stroke",
+                                "stylers": [
+                                    {
+                                        "color": "#fefefe"
+                                    },
+                                    {
+                                        "lightness": 17
+                                    },
+                                    {
+                                        "weight": 1.2
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "landscape",
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "color": "#f5f5f5"
+                                    },
+                                    {
+                                        "lightness": 20
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "poi",
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "color": "#f5f5f5"
+                                    },
+                                    {
+                                        "lightness": 21
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road.highway",
+                                "elementType": "geometry.fill",
+                                "stylers": [
+                                    {
+                                        "color": "#ffffff"
+                                    },
+                                    {
+                                        "lightness": 17
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road.highway",
+                                "elementType": "geometry.stroke",
+                                "stylers": [
+                                    {
+                                        "color": "#ffffff"
+                                    },
+                                    {
+                                        "lightness": 29
+                                    },
+                                    {
+                                        "weight": 0.2
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road.arterial",
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "color": "#ffffff"
+                                    },
+                                    {
+                                        "lightness": 18
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road.local",
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "color": "#ffffff"
+                                    },
+                                    {
+                                        "lightness": 16
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "transit",
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "color": "#f2f2f2"
+                                    },
+                                    {
+                                        "lightness": 19
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "water",
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "color": "#e9e9e9"
+                                    },
+                                    {
+                                        "lightness": 17
+                                    }
+                                ]
+                            }
+                        ]
+                    });
+                    new google.maps.Marker({
+                        position: puneLocation,
+                        map: map,
+                        title: 'SSAP Tech Solutions LLP',
+                        icon: {
+                            url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                        }
+                    });
+                } else {
+                    mapElement.innerHTML = '<p class="text-red-500 p-4">Google Maps API not loaded. Please ensure your API key is correct and the script tag is valid.</p>';
+                    console.error("Google Maps API not loaded.");
+                }
+            }
+        }
+
+        // Load Google Maps API script dynamically
+        function loadGoogleMapsScript() {
+            const apiKey = "YOUR_GOOGLE_MAPS_API_KEY"; // IMPORTANT: Replace with your actual Google Maps API Key
+            if (apiKey === "YOUR_GOOGLE_MAPS_API_KEY") {
+                console.warn("Google Maps API Key is not set. Map will not load. Please replace 'YOUR_GOOGLE_MAPS_API_KEY' with your actual key.");
+                document.getElementById('map').innerHTML = '<p class="text-red-500 p-4">Please set your Google Maps API Key for the map to display.</p>';
+                return;
+            }
+
+            const script = document.createElement('script');
+            script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`;
+            script.async = true;
+            script.defer = true;
+            document.head.appendChild(script);
+            script.onerror = () => {
+                console.error("Failed to load Google Maps script.");
+                document.getElementById('map').innerHTML = '<p class="text-red-500 p-4">Failed to load Google Maps. Check your internet connection or API key.</p>';
+            };
+        }
+
+        // Call functions on window load
+        window.onload = function() {
+            showSlide(currentSlide); // Ensure the first slide is active on load
+            loadGoogleMapsScript(); // Load the map
+        };
+    </script>
+</body>
+</html>
